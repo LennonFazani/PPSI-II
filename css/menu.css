@@ -1,8 +1,13 @@
 *{box-sizing: border-box}
 
-body{background-color: whitesmoke;margin: 0;}
+body{
+    
+    background-color: whitesmoke;
+    margin: 0;
 
-header nav ul{
+}
+
+#menu ul{
     
     right:13%;
     top:0;
@@ -14,7 +19,7 @@ header nav ul{
         
 }
 
-header nav ul li{ 
+#menu ul li{ 
     
 padding-top: 4px;
 padding-bottom: 8px;
@@ -26,19 +31,18 @@ padding:0 20px;
 }
 
 	
-header nav ul li a{
+#menu ul li a{
 
     color: white; 
     text-decoration:none; 
-    padding:45px 0px; 
+    padding:45px 0 2px 0; 
     display:block;
     font-family: Helvetica;
     font-size: 17px;
     
-        
 }
 
-header nav ul li ul{
+#menu ul li ul{
 
 z-index: 1;    
 position:absolute; 
@@ -46,24 +50,30 @@ top:70px;
 left:0;
 background-color:#fff; 
 display:none;
-width: 215px;
-border-radius: 5px;
-border:1px solid #ccc; 
+width: 180px;
+box-shadow: 0px 0px 5px 0px gray;
 
-}	
+}
 
-header nav ul li ul li{
+#menu ul li ul .sub2{width: 215px;}
+
+.sub2 li{
+    
+    text-align: center;
+    padding: 0;
+    
+}
+
+#menu ul li ul li{
     
 border-top:1px solid #ccc; 
 display:block; 
 height: auto;
-text-align: center;
-padding: 0;
-
+padding-left:5px;
 
 }
 
-nav ul li ul li a{ 
+#menu ul li ul li a{ 
     
     color: black;
     font-size: 14px;
@@ -71,17 +81,37 @@ nav ul li ul li a{
     padding-top: 10px;
     padding-right: 5px;
     padding-left: 5px;
+    
 }
 
-li:hover ul,li.over ul{display:block;}
+#menu ul li ul li ul{
+  
+top: 0; 
+left: -215px;
+display: none;
 
-nav ul li ul li:hover{background:#a8b5ff; }
+}
 
-nav ul li ul li:hover a{ color: #fff;}
+#menu ul li:hover .sub1{display:block;}
 
-nav ul li:hover{background:#535560;}
+#menu ul li .sub1 li:hover .sub2{display:block;}
 
-#logo:active{border: 1px solid transparent;transition: height, 0.0s linear;}
+#menu ul li ul li:hover{background:#a8b5ff;}
+
+#menu ul li ul li:hover .esquerda{background-image: url(../img/setaEsquerdaBranca.png)}
+
+#menu ul li .sub1 li:hover .linkSub1{ color: #fff;}
+
+#menu ul li .sub2 li:hover .linkSub2{ color: #fff;}
+
+#menu ul li:hover{background:#535560;}
+
+#logo:active{
+    
+    border: 1px solid transparent;
+
+}
+
 
 header{
     
@@ -91,17 +121,18 @@ header{
     left: 0px;
     height: 70px;
     background-color: #25262b;
-    box-shadow: 0 0 1px 2px gray;
+    box-shadow: 1px 1px 5px 1px gray;
     
 }
 
 #logo{
     
     position: absolute;
+    display: block;
+    background: url(../img/LogotipoLennonP.Fazani.png) no-repeat;
+    padding: 30px 85px 32px 85px;
     top: 5px;
     left: 5%;
-    height: 90%;
-    
     
 }
 
@@ -121,122 +152,175 @@ header{
     
     position: absolute;
     top: 5px;
+    display: block;
+    padding: 20px 20px 20px 20px;
     left:calc(50% - 20px);
+    background-repeat: no-repeat;
     
 }
 
+.casa{
+    
+    background-image: url(../img/Icone_Casa.png);
+    
+}
+
+.prof{
+    
+    background-image: url(../img/Icone_Professor.png);
+    
+}
+
+.livro{
+    
+    background-image: url(../img/Icone_Livro.png);
+    
+}
+
+.seta{
+    
+    display: inline-block;
+    padding: 4px 4px 4px 4px;
+    background-repeat: no-repeat;
+    
+}
+
+.esquerda{
+    
+    background-image: url(../img/setaEsquerda.png);
+    padding: 6.5px 8px 6.5px 6.5px;
+    margin-bottom: -1.5px;
+
+}
+
+.baixo{background-image: url(../img/seta.png);}
+
+.cima{background-image: url(../img/setaCima.png);}
+
+.scrollHeader{height: 50px !important; }
+
+.scrollLogo{
+    
+    top: 3px !important;
+    background-size: auto 45px !important;
+    padding: 22.5px 61px 22.5px 61px !important;
+    
+}
+
+.scrollLink{display: none;}
+
+.scrollSub{top: 50px !important;}
+
+.scrollText{ padding: 16px 0 11px 0 !important;}
 
 /*Inicio Menu Mobile*/
 
-         #check{display:none;}
-         
-      
-         
-         .iconeMenu:active{border:1px solid transparent}
-         
-         
+.flow{overflow: hidden;}
 
 #menuMobile{
     
+    display: none;
+    height: auto;
+    max-height: calc(100vh - 45px);
+    background-color: #25262b;
     position: relative; 
     top: 100%;
     left: 0%;
-    overflow: hidden;
-    height: 0%;
-    transition: height, 0.5s linear;
-
+    overflow: scroll;
+    
 }
 
 #menuMobile ul{
     
-    height: auto;
-    list-style:none; 
-    left:0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Arial;
+    font-size: 16px;
     top: 0;
-    margin:0;
-    padding:0;
-    background-color:#25262b;
+    left: 0;
     
+}
+
+#menuMobile a, #menuMobile ul{color: white;}
+
+#menuMobile a{
+    
+    margin-top: -8px;
+    padding-top: 8.5px;
+    display: block;
+    height: 40px;
+    text-decoration: none;
+        
 }
 
 #menuMobile ul li{
     
-    height: 40px;
-    position: relative;
-    top: 0;
-    left: 0;
+    cursor: pointer;
+    border-top: 1px solid #ccc;
+    padding-top: 8px;
+    padding-left: 10px;
+    min-height: 40px;
+    height: auto;
     line-height: 1.5;
     
+}
+
+#menuMobile ul li:hover{background-color: #535560;}
+#menuMobile ul li ul li:hover{background-color: #9eaabc;}
+#menuMobile ul li ul li ul li:hover{background-color: #a8b5ff;}
+#menuMobile ul li ul li ul li a:hover{color: white;}
+
+#menuMobile ul li ul, #menuMobile ul li ul li ul{
+    
+    margin-top: 5px;
+    display: none;
     
 }
 
-.link,.header{ 
-   
-    border-top: 1px solid #ccc;
+#menuMobile ul li ul{
     
-}
-
-.link{
-    padding-top: 4px;
+    margin-left: -10px;
     padding-left: 10px;
-    padding-bottom: 0px;
+    background-color: #535560;
+    
 }
 
-.header{
+#menuMobile ul li ul li ul{
     
-    cursor: text;
-    font-size: 14px;
-    font-weight: bold;
-    font-family: Helvetica;
-    color: white;
-    padding-left: 20px;
-    padding-top: 10px;
-    padding-bottom: 0;
-    
-     
-}
-
-
-#menuMobile ul li a{font-size: 16px;}
-
-.linha a{
- 
-    padding-left: 50px;
-    padding-top: 9px;
-    padding-bottom: 5px;
     margin-left: -20px;
-    margin-right: -20px;
-    
-    
+    padding-left: 20px;
+    background-color: #9eaabc;
+
 }
-
-.header:hover{background-color: #25262b;}
-
-.link:hover{background:#a8b5ff;}
-
-.link a{padding: 4px 0 9px 10px;}
-
-.linha:hover{background:#a8b5ff; }
-
 
  .iconeMenu{
              
-    z-index: 1;
     position: absolute;
-    top:0;
-    left:0;
-    margin-top:17.5px;
-    margin-left: 8%;
+    top:5px;
+    right:20px;
     cursor: pointer;
     display: none;
-             
-         }
+    padding: 17.5px 17.5px 17.5px 17.5px;
+    background-repeat: no-repeat;
+    
+}
+    
+.abrir{
+        
+    background-image: url(../img/MenuRetratil.png);
+        
+}
+    
+.fechar{
+        
+    background-image: url(../img/MenuRetratil2.png);
+        
+}
 
+.iconeMenu:active{border:1px solid transparent}
          
 /*Fim Menu Mobile*/
-
-
-
 
 /*Inicio Classes Responsivas*/
 
@@ -355,6 +439,7 @@ header{
     
 }
 
+
 @media only screen and (max-width:767px){
     
     
@@ -366,32 +451,22 @@ header{
       
   }
   
-  #menu{display: none}
-  
-  #icone{display: block}  
-  
-  #check:checked ~ #menuMobile{ 
+  header{
       
-    transition: height, 0.5s linear;
-    height:370px;
-    overflow: scroll;
-    
+      height: 45px;
+      
   }
   
-  #check:checked ~ #icone2{
-      
-    display: block   
-}
-
-  #check:checked ~ #icone{
-      
-   display: none;   
-}
+  #menu{display: none}
+  
+  .iconeMenu{display: block;}
+  
 
 #logo{
     
-    transition: height, 0.5s linear; 
-    left: calc(50% - 85px);    
+     top: 3px;
+     background-size: auto 40px;
+     padding: 20px 54px 20px 54px;
     
 }
 
@@ -401,18 +476,5 @@ header{
     background-color: #e7e7e7;
     height: 0;
 }
-
-@media only screen and (max-height:440px){
- 
-    #check:checked ~ #menuMobile{ 
-      
-    transition: height, 0.5s linear;
-    height:calc(100vh - 70px);
-    overflow: scroll;
-    
-  }
-
-} 
-   
 
 }
