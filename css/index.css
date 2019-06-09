@@ -1,97 +1,178 @@
+@font-face {
+    
+  font-family: Font;
+  src: url(../fonts/LemonMilk.otf);
+  
+}
+
+
+.bgImage{
+    
+    background: url(../img/fatec.jpg) no-repeat center;
+    background-size: cover;
+    filter: blur(5px);
+    min-height: 100vh;
+    
+}
+
+header{
+    
+    opacity: 0.9;
+    box-shadow: 1px 1px 5px 1px black;
+    
+}
+
 h1,h2{
     
-    position: relative;
-    color: #980D00;
-    font-family: Verdana;
+    position: absolute;
+    font-family: Font;
+    color: white;
+    margin: 0;
+    text-shadow: 2px 2px 2px black; 
+    
+}
+
+h1{
+    
+    top: 47.5%;
+    left: 8%;
+    font-size: 2.94vw;
     
 }
 
 h2{
     
-    text-align: left;
-    margin-left: 2%;
-    margin-bottom: 3%;
-    margin-top: 3%;
-}
-
-h1{
-    
-   text-align: center;
-   padding-top: 3%;
-   font-size: 32px;
+    font-size: 1.76vw;
+    top: 23%;
+    right: 35%;
     
 }
 
-section{
-    
-    padding: 1%;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    margin-left:-41.66%;
-    background-color: azure;
-    margin-bottom: 5%;
-    box-shadow: 0 0 1px 2px #ccc;
-    border-radius: 3px;
-    
-}
-
-#imgMain{
-    
-    margin: 3% 5% 5% 5%;
-    border-radius: 3px;
-    width: 90%;
-    position: relative;
- 
-        
-}
-
-p{
-    margin: 0;
-    padding-right: 2%;
-    padding-left: 2%;
-    padding-bottom: 2%;
-    color: #5b7399;
-    text-align: justify;
-    font-family: Verdana;
-    font-size: 20px;
-    line-height: 1.5;
-    
-}
-
-#pSite{
-    
-    margin-top: 5%;
-    text-align: right;
-    color: #980D00;
-    
-}
-
-p a{
+a{
     
     text-decoration: none;
+    color: white;
     
 }
 
-p a:hover{
+.galeria{
     
-    color:#5b7399; 
+  position: absolute;
+  top: 31%;  
+  right: 10%;
+  display: grid;
+  height: 24vw;
+  grid-gap: 15px;
     
 }
 
-@media only screen and (max-width:767px){
+[class*="img"]{
     
-    section{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 1px 1px 10px 1px black;
+    border-radius: 2px;
+    cursor: pointer;
+    
+}
+
+[class*="img"]:hover{
+    
+    transform: scale(1.2);
+    transition: linear 0.2s;
+    
+}
+
+.img5{
+    
+    grid-column: 1 ;
+    grid-row: 1/3;
+    
+}
+
+.img3{
+    
+    grid-column: 2;
+    grid-row: 1/3;
+    
+}
+
+.img4{
+    
+    grid-column: 3/5;
+    grid-row: 1/5;
+    
+}
+
+.img2{
+    
+    grid-column: 1/3;
+    grid-row: 3/5;
+    
+}
+
+.img1{
+    
+    grid-column: 1/3;
+    grid-row: 5/7;
+    
+}
+
+.img6{
+    
+    grid-column: 3/5;
+    grid-row: 5/7;
+    
+}
+
+.faixa-sm{display: none}
+
+@media only screen and (max-width:1000px){
+     
+    h1{
         
-        left: 0;
-        margin-left: 0;
+        font-size: 6vw;
+        left: 13%;
+        top: 45%
         
     }
     
-    h1{font-size: 24px}
+    h2{
+        
+        font-size: 4vw;
+        left:41.5%;
+        top: 115%;
+        color: tomato;
+        
+    }
     
-    h2{font-size: 20px;margin-top: 5%;margin-bottom: 5%}
+    .galeria{
+        
+        height: 55vw;
+        left: 0;
+        top: 125%;
+        margin-bottom: 10%;
+        min-width: 100%;
+        width: 100%
+        
+    }
     
-    p{font-size: 16px}
+    .faixa-sm{
+        
+        display: block;
+        height:45px;
+        position: relative;
+        background-color: #25262b;
+        top: 0;
+        left: 0;
+        
+    }
+    
+    .bgImage{
+        
+        background-size: 100% 100%;
+        
+    }
     
 }
